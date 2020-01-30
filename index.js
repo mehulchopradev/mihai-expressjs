@@ -18,6 +18,8 @@ app.use((err, req, res, next) => {
         res.status(404).send({
             error: err.message
         });
+    } else {
+        res.sendStatus(500);
     }
 });
 
@@ -31,3 +33,5 @@ app.get('/hello', (req, res) => {
 app.listen(PORT_NO, () => {
     console.log(`Server running on port no ${PORT_NO}`);
 });
+
+module.exports = app;
